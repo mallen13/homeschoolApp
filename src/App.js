@@ -1,25 +1,45 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import LoginScreen from './Components/LoginScreen/LoginScreen';
+import AppHome from './Components/AppHome/AppHome';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isLoggedIn: false
+    };
+  }
+
+  detectLoginStatus = (loginStatus = false) => {
+    loginStatus ? this.setState({isLoggedIn: true}) : this.setState({isLoggedIn: false}) ;
+  }
+
+  render() {
+
+      return (
+        <Router>
+
+            { this.state.isLoggedIn ? <Redirect to='/home' /> : <Redirect to='/login' />}
+
+            <Switch>
+                <Route path="/login">
+                  <LoginScreen loginStatus={this.detectLoginStatus} />
+                </Route>
+                <Route path="/home">
+                   <AppHome loginStatus={this.detectLoginStatus} />
+                </Route>
+            </Switch>
+
+        </Router>
+      );
+  }
 }
 
 export default App;

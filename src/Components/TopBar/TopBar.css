@@ -1,0 +1,29 @@
+.topBar {
+    background-color: #A708A7;
+    height: 50px;
+    border-bottom: 1px solid rgb(100, 100, 100);
+}
+
+.topLogo {
+    width: 40px;
+    height: 40px;
+    background-color: lightgray; 
+    margin: 15px;
+}
+
+.topText {
+    color: white;
+}
+
+@media only screen and (max-width: 320px) {
+    .topText {
+        font-size: 1.1em;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .topBar {
+        background-color: #A708A7;
+        height: 75px;
+    }
+}

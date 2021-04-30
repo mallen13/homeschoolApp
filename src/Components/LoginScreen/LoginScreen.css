@@ -1,0 +1,98 @@
+/* Utilities */
+.linkBtn {
+    margin: 7px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+  
+.linkBtn:hover, .linkBtn:focus {
+    outline: none;
+    text-decoration: underline;
+}
+
+.loginScreenSubmit {
+    margin: 15px 15px 15px 25px;
+    background-color: white;
+    padding: 10px 20px 10px 20px;
+}
+
+.loginScreenSubmit:hover, .loginScreenSubmit:focus {
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.invalidText {
+    color: red;
+    background-color: white;
+    padding: 5px;
+    width: 190px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.loginRegisterBtn {
+    border: none;
+    background-color: white;
+    width: 100px;
+    height: 40px;
+    margin: 10px;
+}
+
+.loginScreenFormTitle {
+    margin: 10px 0px 30px 0px;
+  }
+
+  .placeholderImg {
+      width: 40px;
+      height: 40px;
+      background-color: #A708A7;
+      color: white;
+  }
+
+/*end utilities*/
+
+.loginScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #A708A7;  
+    height: 100vh;
+    width: 100vw;
+    padding: 15px;
+}
+
+.logoPlaceholderLogin {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    margin-top: 30px;
+}
+
+.loginScreenTitle {
+    margin: 10px;
+    color: white;
+    text-align: center;
+}
+
+.splashBtnContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+    .logoPlaceholderLogin {
+        width: 75px;
+        height: 75px;
+    }
+
+    .splashBtnContainer {
+        flex-direction: row;
+    }
+
+    .loginRegisterBtn {
+        margin: 20px;
+    }
+}
