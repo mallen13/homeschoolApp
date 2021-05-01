@@ -15,32 +15,29 @@
   align-self: flex-start;
   border: 1px solid transparent;
   padding: 3px;
-  background-color: transparent;
-  font-size: 0.9em;
+  font-size: 1em;
   cursor: pointer;
   color: rgb(43, 43, 43);
 }
 
-.iconBtn:hover, .iconBtn:focus {
-  outline: none;
-  color: rgb(189, 189, 189);
+.iconBtn:hover, .iconBtn:focus, .iconBtn:active {
+   color: #A708A7;
 }
 
 .icon {
-  margin-bottom: -4px;
+  margin-bottom: -5px;
 }
 
 .popupForm {
-  position: fixed;
+  position: absolute;
   width: 100vw;
   height: 100vh;
   background-color: white;
-  padding: 10px;
 }
 
-.popupformNav {
-  margin-bottom: 30px;
-  background-color: red;
+.popupFormNav {
+  margin-bottom: 20px;
+  padding: 20px;
 }
 
 .displayNone {
@@ -49,8 +46,14 @@
 
 .formSubmitBtn {
   border: 1px solid #A708A7;
-  background-color: white;
+  background-color: #A708A7;
+  color: white;
   padding: 10px;
+  width: 275px;
+}
+
+.formSubmitBtn:hover, .formSubmitBtn:active, .formSubmitBtn:focus {
+  background-color:#e90ee9;
 }
 
 /* General Styling */
@@ -61,27 +64,46 @@
 }
 
 body {
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 
 input {
-  margin: 7px 0px 25px 0px;
-  font-size: 0.9em;
+  margin: 0px 0px 25px 0px;
+  outline: none; 
+  border-radius: 0px;
   border: none;
   border-bottom: 1px solid black;
-  padding: 0px;
+  padding: 7px;
+  font-size: 1.1em;
   color: black;
+  width: 275px;
+}
+
+input:focus {
+  background-color: rgb(235, 235, 235);
 }
 
 label {
   color: gray;
 }
 
-input:focus {
+button {
+  border: none;
+  font-size: 1em;
+  background-color: white;
+  cursor: pointer;
+}
+
+button:hover, button:active, button:focus {
   outline: none;
 }
 
-button {
-  font-size: 0.9em;
-  border-radius: 5px;
+@media only screen and (max-width: 280px) {
+  .formSubmitBtn {
+    width: 250px;
+  }
+
+  input {
+    width: 250px;
+  }
 }

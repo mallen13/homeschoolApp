@@ -7,24 +7,42 @@ class ForgotForm extends React.Component {
         this.state = {};
     }
 
+    handleSubmit = (e) => {
+        alert('Email Sent');
+        e.preventDefault();
+     }
+
     render() {
         return (
-            <form className='flexCenter loginScreenForm'>
+            <form className='flexCenter popupForm' onSubmit={this.handleSubmit} >
 
-                <button className='iconBtn iconBtnWhite' onClick={() => this.props.changeRoute('login')}>
-                    <ChevronLeft className='iconWhite icon' size='20' /> Back
-                </button>
+                <div className='formContainer'>
 
-                <label className='loginScreenLabel'>Forgot Username/ Password</label>
+                    <div className='popupFormNav'>
+                        <button className='iconBtn' onClick={() => this.props.changeRoute('login')}>
+                            <ChevronLeft className='icon' size={25} /> Back
+                        </button>
+                    </div>
 
-                <div>
-                    <label className='labelWhite' htmlFor='forgotEmail'>Email Address:</label><br />
-                    <input name='forgotEmail' type='text' placeholder='Email Address' /> 
+                    <div className='flexCenter'>
+                        <div className='flexCenter placeholderImg'>
+                            Logo
+                        </div>
+
+                        <p className='loginScreenFormTitle' >Forgot Username/ Password</p>
+
+                        <div>
+                            <label>Email Address:</label><br />
+                            <input name='recoveryEmail' type='text' />
+                        </div>
+
+                        <p className='invalidText'>Invalid email address.</p>
+
+                        <button className='formSubmitBtn' type='submit'>Send Email</button>
+
+                    </div>
+
                 </div>
-
-                <p className='loginScreenSubmissionText'>Invalid email address.</p>
-
-                <input className='loginScreenSubmit' type='submit' value='Submit' />
 
             </form>
         )

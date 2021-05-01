@@ -1,47 +1,39 @@
 /* Utilities */
 .linkBtn {
-    margin: 7px;
+    margin: 20px;
     border: none;
-    background-color: transparent;
-    color: white;
-    cursor: pointer;
 }
   
 .linkBtn:hover, .linkBtn:focus {
     outline: none;
     text-decoration: underline;
-}
-
-.loginScreenSubmit {
-    margin: 15px 15px 15px 25px;
     background-color: white;
-    padding: 10px 20px 10px 20px;
-}
-
-.loginScreenSubmit:hover, .loginScreenSubmit:focus {
-    cursor: pointer;
-    background-color: lightgray;
 }
 
 .invalidText {
     color: red;
     background-color: white;
     padding: 5px;
-    width: 190px;
+    max-width: 250px;
     text-align: center;
     margin-bottom: 20px;
 }
 
-.loginRegisterBtn {
-    border: none;
+.loginScreenBtn {
     background-color: white;
-    width: 100px;
-    height: 40px;
-    margin: 10px;
+    color: black;
+    padding: 10px;
+    width: 275px;
+    margin: 15px;
 }
+
+.loginScreenBtn:hover, .loginScreenBtn:active, .loginScreenBtn:focus {
+    background-color: lightgray;
+  }
 
 .loginScreenFormTitle {
     margin: 10px 0px 30px 0px;
+    font-size: 1.5em;
   }
 
   .placeholderImg {
@@ -50,6 +42,16 @@
       background-color: #A708A7;
       color: white;
   }
+
+  .formInputContainer {
+    padding: 20px;
+  }
+
+  .formContainer {
+    width: 100vw;
+    height: 100vh;
+  }
+
 
 /*end utilities*/
 
@@ -88,11 +90,25 @@
         height: 75px;
     }
 
-    .splashBtnContainer {
-        flex-direction: row;
+    .formContainer {
+        width: 425px;
+        height: auto;
+        border: 1px solid black;
+        padding: 10px;
     }
+}
 
-    .loginRegisterBtn {
-        margin: 20px;
+@media only screen and (max-width: 280px) {
+    .loginScreenBtn {
+        width: 250px;
+    }
+}
+
+@media only screen and (orientation: landscape) and (max-width: 812px) {
+    .formContainer {
+        width: 100vw;
+        height: 100vh;
+        border: none;
+        padding: 10px;
     }
 }

@@ -38,13 +38,13 @@ class LoginScreen extends React.Component {
                  
                 <Router>
 
-                    { this.state.route ? <Redirect to={this.state.route}/> : <Redirect to='/splash' /> }
+                    { this.state.route ? <Redirect to={this.state.route}/> : <Redirect to='/menu' /> }
 
                     <Switch>
-                        <Route path="/splash">
-                            <div className='splashBtnContainer'>
-                                <button className='loginRegisterBtn' onClick={ () => {this.changeRoute('login')} }>Sign In</button>
-                                <button className='loginRegisterBtn' onClick={ () => {this.changeRoute('register')} }>Register</button>
+                        <Route path="/menu">
+                            <div className='flexCenter'>
+                                <button className='loginScreenBtn' onClick={ () => {this.changeRoute('login')} }>Sign In</button>
+                                <button className='loginScreenBtn' onClick={ () => {this.changeRoute('register')} }>Register</button>
                             </div>
                         </Route>
                         <Route path="/login">
