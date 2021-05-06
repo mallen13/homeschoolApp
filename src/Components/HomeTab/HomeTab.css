@@ -1,11 +1,4 @@
-
-
-@media only screen and (min-width: 768px) {
-
-}
-
-
-@media only screen and (min-width: 992px) {
-    
- 
+.taskCount {
+    color: rgb(90, 90, 90);
+    margin-left: 15px; 
 }

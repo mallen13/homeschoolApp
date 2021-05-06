@@ -1,22 +1,14 @@
 /* Utilities */
 .linkBtn {
-    margin: 20px;
+    margin: 10px 10px -10px 10px;
     border: none;
+    font-size: 0.9em;
 }
   
 .linkBtn:hover, .linkBtn:focus {
     outline: none;
     text-decoration: underline;
     background-color: white;
-}
-
-.invalidText {
-    color: red;
-    background-color: white;
-    padding: 5px;
-    max-width: 250px;
-    text-align: center;
-    margin-bottom: 20px;
 }
 
 .loginScreenBtn {
@@ -28,30 +20,31 @@
 }
 
 .loginScreenBtn:hover, .loginScreenBtn:active, .loginScreenBtn:focus {
-    background-color: lightgray;
+    background-color: rgb(231, 231, 231);
   }
 
 .loginScreenFormTitle {
-    margin: 10px 0px 30px 0px;
+    margin-bottom: 0px;
     font-size: 1.5em;
   }
 
-  .placeholderImg {
+.placeholderImg {
       width: 40px;
       height: 40px;
       background-color: #A708A7;
       color: white;
+      margin-bottom: 20px;
   }
 
-  .formInputContainer {
-    padding: 20px;
-  }
-
-  .formContainer {
+.formContainer {
     width: 100vw;
     height: 100vh;
   }
 
+.loginForm {
+      width: 100vw;
+      min-height: 100vh;
+  }
 
 /*end utilities*/
 
@@ -61,16 +54,16 @@
     align-items: center;
     justify-content: space-evenly;
     background-color: #A708A7;  
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     padding: 15px;
+    overflow: auto;
 }
 
 .logoPlaceholderLogin {
     width: 50px;
     height: 50px;
     background-color: white;
-    margin-top: 30px;
 }
 
 .loginScreenTitle {
@@ -79,9 +72,15 @@
     text-align: center;
 }
 
-.splashBtnContainer {
-    display: flex;
-    flex-direction: column;
+.formContainer p {
+    text-align: center;
+    font-size: 0.9em;
+  }
+
+  @media only screen and (max-width: 280px) {
+    .loginScreenBtn {
+        width: 250px;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -91,23 +90,26 @@
     }
 
     .formContainer {
-        width: 425px;
+        width: 375px;
         height: auto;
         border: 1px solid black;
-        padding: 10px;
+        padding: 10px 10px 00px 10px;
     }
-}
 
-@media only screen and (max-width: 280px) {
-    .loginScreenBtn {
-        width: 250px;
+    .loginScreen {
+        justify-content: center;
+    }
+
+    .loginScreenTitle {
+        margin-bottom: 100px;
+        font-size: 2.5em;
     }
 }
 
 @media only screen and (orientation: landscape) and (max-width: 812px) {
     .formContainer {
         width: 100vw;
-        height: 100vh;
+        min-height: 100vh;
         border: none;
         padding: 10px;
     }

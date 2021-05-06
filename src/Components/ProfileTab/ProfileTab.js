@@ -1,5 +1,6 @@
 import React from 'react';
 import './ProfileTab.css';
+import {ChevronRight} from 'react-bootstrap-icons'; 
 
 class ProfileTab extends React.Component {
     constructor() {
@@ -11,7 +12,7 @@ class ProfileTab extends React.Component {
 
     signOut = () => {
 
-        if (window.confirm("Are you sure?")) {
+        if (window.confirm("Would you like to sign out?")) {
             this.props.loginStatus(false);
         }
         
@@ -20,8 +21,11 @@ class ProfileTab extends React.Component {
     render() {
         return (
           <div>
-              Profile Tab
-              <button onClick={this.signOut}>Sign Out</button>
+              <button className='menuBtn' onClick={this.signOut}>
+                 Sign Out
+                 <ChevronRight size={25}/>
+          
+              </button>
           </div>
         )
     }

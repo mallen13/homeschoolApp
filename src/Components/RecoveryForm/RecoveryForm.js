@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChevronLeft } from 'react-bootstrap-icons'; 
 
-class RegisterForm extends React.Component {
+class RecoveryForm extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -10,9 +10,7 @@ class RegisterForm extends React.Component {
         };
 
         //create references
-        this.emailInput = React.createRef();
-        this.passwordInput = React.createRef();
-        
+        this.emailInput = React.createRef();    
     }
 
     //form submission
@@ -20,7 +18,6 @@ class RegisterForm extends React.Component {
         e.preventDefault();
 
         if (  //email conditions
-            this.emailInput.current.value === ('') ||
             this.emailInput.current.value.includes(' ') === true ||
             this.emailInput.current.value.includes('@') === false ||
             this.emailInput.current.value.includes('.') === false ||
@@ -30,33 +27,22 @@ class RegisterForm extends React.Component {
                 formValidationText: "Invalid email address.",
                 formValidationTextClass: 'formValidationText red'
             });
-
-        } else if ( //pw conditions
-            this.passwordInput.current.value.includes(' ') === true ||
-            this.passwordInput.current.value.length < 6
-        ) {
-            this.setState({
-                formValidationText: "Invalid password.",
-                formValidationTextClass: 'formValidationText red'
-            });
-            this.passwordInput.current.value = '';
+            this.emailInput.current.value = '';
+         
 
         } else {
-            //if login sucessful, register user
-            this.registerUser();
+            this.sendRecoveryEmail();
         }
     }
 
-    //register user credentials
-    registerUser = () => {
-        this.setState({
-            formValidationText: 'Success! You may now log in.',
-            formValidationTextClass: 'formValidationText green'
-        });
-        this.emailInput.current.value = '';
-        this.passwordInput.current.value = '';
-        this.passwordInput.current.blur();
-        this.emailInput.current.blur();
+    //send recovery email
+    sendRecoveryEmail = () => {
+            this.emailInput.current.value = '';
+            this.setState({
+                formValidationText: "Recovery email sent, if valid.",
+                formValidationTextClass: 'formValidationText green',
+            });
+            
     }
     
     render() {
@@ -66,7 +52,7 @@ class RegisterForm extends React.Component {
                 <div className='formContainer'>
                    {/* Back Button */}
                     <div className='popupFormNav'>
-                        <button className='iconBtn' onClick={() => this.props.changeRoute('menu')}>
+                        <button className='iconBtn' onClick={() => this.props.changeRoute('login')}>
                             <ChevronLeft className='icon' size={25} /> Back
                         </button>
                     </div>
@@ -88,28 +74,9 @@ class RegisterForm extends React.Component {
                             }} />
                         </div>
                     
-                     {/* PW Input */}
-                        <div>
-                            <label>Password:</label><br />
-                            <input ref={this.passwordInput} 
-                                   name='registerPassword'
-                                   type='text' 
-                                   placeholder='at least 8 characters' 
-                                   autoComplete='off'
-                                   onKeyDown={ (e) => {
-                                        if (e.key === 'Enter') {
-                                          e.preventDefault();
-                                          this.handleSubmit(e);
-                                   }
-                            }} />
-                        </div>
-
-                        <button className='formSubmitBtn' type='submit'>Create Account</button>
+                        <button className='formSubmitBtn' type='submit'>Send Email</button>
 
                         <p className={this.state.formValidationTextClass}>{this.state.formValidationText}</p>
-
-                        
-
                     </div>
 
                 </div>
@@ -119,4 +86,4 @@ class RegisterForm extends React.Component {
     }
 }
 
-export default RegisterForm;
+export default RecoveryForm;

@@ -7,63 +7,100 @@ import ManageTab from '../ManageTab/ManageTab';
 import ReportsTab from '../ReportsTab/ReportsTab';
 import ProfileTab from '../ProfileTab/ProfileTab';
 
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Redirect
-  } from "react-router-dom";
-
 class AppHome extends React.Component {
     constructor() {
         super();
         this.state = {
-            route: null
+            route: 'home',
+            rightColumnClass: 'rightColumn hideOnMobile'
         };
     }
 
     changeRoute = (route) => {
-        this.setState({route: route});
+        this.setState({ route: route });
+    }
+
+    displayForm = () => {
+        if (this.state.rightColumnClass === 'rightColumn') {
+            this.setState({rightColumnClass: 'rightColumn hideOnMobile'});
+        } else {
+            this.setState({rightColumnClass: 'rightColumn'});
+        }
     }
 
     render() {
-        return (
-          <div className='appHome'>
-                <TopBar />
-                <div className='appBodyContainer'>
-
-                    <NavBar newRoute={this.changeRoute} />
-
-                    <Router>
-
-                        { this.state.route ? <Redirect to={this.state.route}/> : <Redirect to='/home'/> }
-
-                        <div className='middleColumn'>
-                            <Switch >
-                                <Route path="/home">
-                                   <HomeTab />
-                                </Route>
-                                <Route path="/manage">
-                                   <ManageTab />
-                                </Route>
-                                <Route path="/reports">
-                                   <ReportsTab />
-                                </Route>
-                                <Route path="/profile">
-                                   <ProfileTab loginStatus={this.props.loginStatus}/>
-                                </Route>
-                            </Switch>
-                        </div>
-                        
-                    </Router>
-
-                    <div className='rightColumn'>
-                        Form
+        
+        switch (this.state.route) {
+            case 'home':
+                return (
+                    <div className='appHome'>
+                          <TopBar />
+                          <div className='appBodyContainer'>
+                              <NavBar newRoute={this.changeRoute} />
+                              <HomeTab displayForm={this.displayForm} />
+                              <div className={this.state.rightColumnClass}>
+                                <div className='flexCenter popupForm'>
+                                    Nothing to show/ Edit Task Form
+                                   <button onClick={this.displayForm}>Back</button>
+                                </div>
+                              </div>
+                          </div>
                     </div>
+                  );
 
-              </div>
-          </div>
-        )
+            case 'manage':
+                return (
+                    <div className='appHome'>
+                          <TopBar />
+                          <div className='appBodyContainer'>
+                              <NavBar newRoute={this.changeRoute} />
+                              <ManageTab />
+                              <div className={this.state.rightColumnClass}>
+                                <div className='flexCenter popupForm'>
+                                    Nothing to show/ Edit or Add
+                                   <button onClick={this.displayForm}>Back</button>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                  );
+
+            case 'reports':
+                return (
+                    <div className='appHome'>
+                          <TopBar />
+                          <div className='appBodyContainer'>
+                              <NavBar newRoute={this.changeRoute} />
+                              <ReportsTab />
+                              <div className={this.state.rightColumnClass}>
+                                <div className='flexCenter popupForm'>
+                                    Nothing to show
+                                   <button onClick={this.displayForm}>Back</button>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                  );
+
+            case 'profile':
+                return (
+                    <div className='appHome'>
+                          <TopBar />
+                          <div className='appBodyContainer'>
+                              <NavBar newRoute={this.changeRoute} />
+                              <ProfileTab loginStatus={this.props.loginStatus}/>
+                              <div className={this.state.rightColumnClass}>
+                                <div className='flexCenter popupForm'>
+                                    Nothing to show
+                                   <button onClick={this.displayForm}>Back</button>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                  );
+                  
+            default: return null;
+        }
     }
 }
 

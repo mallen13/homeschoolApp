@@ -2,43 +2,36 @@ import './App.css';
 import React from 'react';
 import LoginScreen from './Components/LoginScreen/LoginScreen';
 import AppHome from './Components/AppHome/AppHome';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect
-} from "react-router-dom";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      isLoggedIn: false
+      isAuthenticated: false
     };
   }
 
   detectLoginStatus = (loginStatus = false) => {
-    loginStatus ? this.setState({isLoggedIn: true}) : this.setState({isLoggedIn: false}) ;
+    loginStatus ? 
+      this.setState({isAuthenticated: true}) : 
+      this.setState({isAuthenticated: false}) ;
   }
 
   render() {
 
-      return (
-        <Router>
+      switch (this.state.isAuthenticated) {
+        case true:
+           return (
+             <AppHome loginStatus={this.detectLoginStatus} />
+           );
+        case false:
+          return (
+           <LoginScreen loginStatus={this.detectLoginStatus} />
+          )
+        default: return null;
+            
+      }
 
-            { this.state.isLoggedIn ? <Redirect to='/home' /> : <Redirect to='/login' />}
-
-            <Switch>
-                <Route path="/login">
-                  <LoginScreen loginStatus={this.detectLoginStatus} />
-                </Route>
-                <Route path="/home">
-                   <AppHome loginStatus={this.detectLoginStatus} />
-                </Route>
-            </Switch>
-
-        </Router>
-      );
   }
 }
 

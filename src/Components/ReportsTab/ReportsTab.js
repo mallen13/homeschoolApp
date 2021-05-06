@@ -11,8 +11,8 @@ class ReportsTab extends React.Component {
 
     render() {
         return (
-          <div>
-              Reports Tab
+          <div className='flexCenter'>
+              <h2>Reports Tab Coming Soon...</h2> <p>(Maybe Name tracking)</p>
           </div>
         )
     }

@@ -1,7 +1,7 @@
 .topBar {
     background-color: #A708A7;
     height: 50px;
-    border-bottom: 1px solid rgb(100, 100, 100);
+    position: relative;
 }
 
 .topLogo {
@@ -13,11 +13,12 @@
 
 .topText {
     color: white;
+    font-size: 1.3em;
 }
 
 @media only screen and (max-width: 320px) {
     .topText {
-        font-size: 1.1em;
+        font-size: 0.9em;
     }
 }
 
@@ -25,5 +26,9 @@
     .topBar {
         background-color: #A708A7;
         height: 75px;
+        box-shadow: 0px 5px 7px rgb(145, 144, 144);
+    }
+    .topText {
+        font-size: 1.5em;
     }
 }
