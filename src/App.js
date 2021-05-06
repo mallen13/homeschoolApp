@@ -2,12 +2,6 @@ import './App.css';
 import React from 'react';
 import LoginScreen from './Components/LoginScreen/LoginScreen';
 import AppHome from './Components/AppHome/AppHome';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect
-} from "react-router-dom";
 
 class App extends React.Component {
   constructor() {
