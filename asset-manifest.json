@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/homeschoolOrganizer/static/css/main.8c414669.chunk.css",
-    "main.js": "/homeschoolOrganizer/static/js/main.b878e4fa.chunk.js",
-    "main.js.map": "/homeschoolOrganizer/static/js/main.b878e4fa.chunk.js.map",
-    "runtime-main.js": "/homeschoolOrganizer/static/js/runtime-main.a067fcb9.js",
-    "runtime-main.js.map": "/homeschoolOrganizer/static/js/runtime-main.a067fcb9.js.map",
-    "static/js/2.a0bdebc6.chunk.js": "/homeschoolOrganizer/static/js/2.a0bdebc6.chunk.js",
-    "static/js/2.a0bdebc6.chunk.js.map": "/homeschoolOrganizer/static/js/2.a0bdebc6.chunk.js.map",
-    "static/js/3.3c5bf28a.chunk.js": "/homeschoolOrganizer/static/js/3.3c5bf28a.chunk.js",
-    "static/js/3.3c5bf28a.chunk.js.map": "/homeschoolOrganizer/static/js/3.3c5bf28a.chunk.js.map",
+    "main.css": "/homeschoolOrganizer/static/css/main.4310563f.chunk.css",
+    "main.js": "/homeschoolOrganizer/static/js/main.407d86d4.chunk.js",
+    "main.js.map": "/homeschoolOrganizer/static/js/main.407d86d4.chunk.js.map",
+    "runtime-main.js": "/homeschoolOrganizer/static/js/runtime-main.5d5f251f.js",
+    "runtime-main.js.map": "/homeschoolOrganizer/static/js/runtime-main.5d5f251f.js.map",
+    "static/js/2.fca5bd90.chunk.js": "/homeschoolOrganizer/static/js/2.fca5bd90.chunk.js",
+    "static/js/2.fca5bd90.chunk.js.map": "/homeschoolOrganizer/static/js/2.fca5bd90.chunk.js.map",
+    "static/js/3.e47a21d3.chunk.js": "/homeschoolOrganizer/static/js/3.e47a21d3.chunk.js",
+    "static/js/3.e47a21d3.chunk.js.map": "/homeschoolOrganizer/static/js/3.e47a21d3.chunk.js.map",
     "index.html": "/homeschoolOrganizer/index.html",
-    "static/css/main.8c414669.chunk.css.map": "/homeschoolOrganizer/static/css/main.8c414669.chunk.css.map",
-    "static/js/2.a0bdebc6.chunk.js.LICENSE.txt": "/homeschoolOrganizer/static/js/2.a0bdebc6.chunk.js.LICENSE.txt"
+    "static/css/main.4310563f.chunk.css.map": "/homeschoolOrganizer/static/css/main.4310563f.chunk.css.map",
+    "static/js/2.fca5bd90.chunk.js.LICENSE.txt": "/homeschoolOrganizer/static/js/2.fca5bd90.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.a067fcb9.js",
-    "static/js/2.a0bdebc6.chunk.js",
-    "static/css/main.8c414669.chunk.css",
-    "static/js/main.b878e4fa.chunk.js"
+    "static/js/runtime-main.5d5f251f.js",
+    "static/js/2.fca5bd90.chunk.js",
+    "static/css/main.4310563f.chunk.css",
+    "static/js/main.407d86d4.chunk.js"
   ]
 }
